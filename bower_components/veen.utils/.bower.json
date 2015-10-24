@@ -22,11 +22,11 @@
     "index.html",
     "index.js"
   ],
-  "_release": "ac32a18a9e",
+  "_release": "7418635320",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ac32a18a9ee3e1df9f18ccd9563274d99b52d26f"
+    "commit": "7418635320fb1ce33419bbced32829da454ab299"
   },
   "_source": "git://github.com/veenedu/Utils.git",
   "_target": "*",

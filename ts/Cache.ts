@@ -7,19 +7,20 @@ class Cache {
 	//array of objects with table name and key keys
 	//eg [{name:"stories",key:"id"}]
 	constructor(tables) {
-		var c = this.cache;
+		var c = {};
 		Utils.forEach(tables, function(table) {
 			c[table.name] = {
 				data: [],
 				key: table.key
 			};
-		})
+		});
+		this.cache = c;
 	}
 
 	
 	///get all rows of a table
 	getTableData(tableName): Array<any> {
-		return this.getTableReference[tableName]['data'];
+		return this.getTableReference(tableName)['data'];
 	}
 	
 	getDocsEquals(tableName,prop,value){
@@ -56,7 +57,7 @@ class Cache {
 		var data = me.getTableData(tableName);
 		var tableKey = me.getTableKey(tableName);
 
-		Utils.forEach(data, function(doc, index) {
+		Utils.forEach(docs, function(doc, index) {
 			//if doc already exists update it 
 			if (Utils.inArray(doc[tableKey], data, tableKey)) {
 				me.updateDocToTable(tableName, doc, index);
@@ -76,7 +77,7 @@ class Cache {
 	updateDocsEquals(tableName, property, value, updateFn) {
 		var data = this.getTableData(tableName);
 		Utils.forEach(data,function(doc,index){
-			if(doc['prop'] == value){
+			if(doc[property] == value){
 				updateFn(doc);
 			}
 		});
@@ -94,7 +95,7 @@ class Cache {
 	
 	//
 	private getTableKey(tableName) {
-		return this.getTableReference[tableName]['key'];
+		return this.getTableReference(tableName)['key'];
 	}
 			
 	private getTableReference(tableName) {
@@ -102,11 +103,11 @@ class Cache {
 	}
 
 	private pushDocToTable(tableName, doc) {
-		this.getTableReference[tableName]['data'].push(doc);
+		this.getTableReference(tableName)['data'].push(doc);
 	}
 
 	private updateDocToTable(tableName, doc, index) {
 		//a.splice(2,1,"pp")
-		this.getTableReference[tableName]['data'].splice(index, 1, doc);
+		this.getTableReference(tableName)['data'].splice(index, 1, doc);
 	}
 }

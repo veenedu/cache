@@ -80,6 +80,12 @@ class Utils {
         }
     }
 
+    static forTimes(num: number, fn:Function){
+        for(var i = 0 ;i<num; i++){
+            fn(i);
+        }
+    }
+
     static parseTime(time) {
         var diff = Math.floor((new Date().getTime() - (time * 1000)) / 1000);
         if (diff < 60) {

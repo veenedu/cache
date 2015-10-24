@@ -71,6 +71,11 @@ var Utils = (function () {
             fn(arr[i], i);
         }
     };
+    Utils.forTimes = function (num, fn) {
+        for (var i = 0; i < num; i++) {
+            fn(i);
+        }
+    };
     Utils.parseTime = function (time) {
         var diff = Math.floor((new Date().getTime() - (time * 1000)) / 1000);
         if (diff < 60) {

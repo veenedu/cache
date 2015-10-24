@@ -16,19 +16,39 @@ class Cache {
 		})
 	}
 
-
+	
+	///get all rows of a table
 	getTableData(tableName): Array<any> {
 		return this.getTableReference[tableName]['data'];
 	}
 	
+	getDocsEquals(tableName,prop,value){
+		var tableData = this.getTableData(tableName);
+		return Utils.filterArrayByVal(tableData,prop,value);		
+	}
+	
 	//get row where id
 	getById(tableName,id){
-		var tableData = this.getTableData(tableName);
 		var key = this.getTableKey(tableName);
-		return Utils.filterArrayByVal(tableData,key,id);
-	}
-
+		return this.getDocsEquals(tableName,key,id);
+	}	
 	
+	deleteDocsEquals(tableName, prop, val){
+		var tableData = this.getTableData(tableName);
+		var newData = [];
+		Utils.forEach(tableData,function(row){
+			if(row[prop] != val){
+				newData.push(row);
+			}
+		});
+		
+		this.getTableReference(tableName)['data']= newData;
+	}	
+	
+	deleteDocById(tableName,id){
+		var tableKey = this.getTableKey(tableName);
+		this.deleteDocsEquals(tableName,tableKey,id);
+	}
 	
 	//update or insert Docs
 	insertDocs(tableName, docs) {
@@ -51,6 +71,20 @@ class Cache {
 	//update or insert doc
 	insertDoc(tableName, doc) {
 		this.insertDocs(tableName, [doc]);
+	}
+	
+	updateDocsEquals(tableName, property, value, updateFn) {
+		var data = this.getTableData(tableName);
+		Utils.forEach(data,function(doc,index){
+			if(doc['prop'] == value){
+				updateFn(doc);
+			}
+		});
+	}
+	
+	updateDocById(tableName,id,updateFn){
+		var tableKey = this.getTableKey(tableName);
+		this.updateDocsEquals(tableName,tableKey,id,updateFn);
 	}
 	
 	//clear Table

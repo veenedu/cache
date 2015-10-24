@@ -12,7 +12,7 @@
     "Veen"
   ],
  "dependencies": {
-    "veen.utils": "~1.0.0"
+    "veen.utils":">1.0.0"
   },  
   "license": "MIT",
   "ignore": [

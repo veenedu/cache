@@ -1,0 +1,35 @@
+{
+  "name": "veen.utils",
+  "main": "./dist/utils.js",
+  "homepage": "https://github.com/veenedu/Utils.git",
+  "description": "This is utils",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "veen"
+  ],
+  "authors": [
+    "Veen"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "index.html",
+    "index.js"
+  ],
+  "_release": "ac32a18a9e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ac32a18a9ee3e1df9f18ccd9563274d99b52d26f"
+  },
+  "_source": "git://github.com/veenedu/Utils.git",
+  "_target": "*",
+  "_originalSource": "veen.utils",
+  "_direct": true
+}

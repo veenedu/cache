@@ -1,0 +1,27 @@
+{
+  "name": "veen.cache",
+  "main": "./dist/cache.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/veenedu/cache.git",
+  "description": "This is cache",
+  "moduleType": ["globals"],
+  "keywords": [
+    "veen"
+  ],
+  "authors": [
+    "Veen"
+  ],
+ "dependencies": {
+    "veen.utils": "~1.0.0"
+  },  
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "index.html",
+    "index.js"
+  ] 
+}

@@ -1,0 +1,24 @@
+{
+  "name": "veen.utils",
+  "main": "./dist/utils.js",
+  "version": "1.0.1",
+  "homepage": "https://github.com/veenedu/Utils.git",
+  "description": "This is utils",
+  "moduleType": ["globals"],
+  "keywords": [
+    "veen"
+  ],
+  "authors": [
+    "Veen"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "index.html",
+    "index.js"
+  ] 
+}

@@ -66,14 +66,20 @@ var Utils = (function () {
     Utils.noop = function (val) {
         return val;
     };
-    Utils.forEach = function (arr, fn) {
-        for (var i = 0; i < arr.length; i++) {
-            fn(arr[i], i);
+    //loop over an object
+    Utils.forEachKey = function (obj, fn) {
+        for (var key in obj) {
+            fn(key, obj[key]);
         }
     };
     Utils.forTimes = function (num, fn) {
         for (var i = 0; i < num; i++) {
             fn(i);
+        }
+    };
+    Utils.forEach = function (arr, fn) {
+        for (var i = 0; i < arr.length; i++) {
+            fn(arr[i], i);
         }
     };
     Utils.parseTime = function (time) {

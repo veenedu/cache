@@ -16,6 +16,17 @@ class Cache {
 		});
 		this.cache = c;
 	}
+	
+	destroy(){
+		if(this.cache){
+			Utils.forEachKey(this.cache,function(key,val){
+				val['data'].length = 0;
+				delete val['data'];
+				delete val['key'];
+			});
+		}
+		this.cache = {};
+	}
 
 	
 	///get all rows of a table

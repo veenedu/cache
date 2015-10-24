@@ -73,10 +73,10 @@ class Utils {
         return  val;
     } 
     
-    
-    static forEach(arr,fn){
-        for(var i=0; i< arr.length; i++){
-            fn(arr[i],i);
+    //loop over an object
+    static forEachKey(obj,fn:Function){
+        for(var key in obj){
+            fn(key,obj[key]);
         }
     }
 
@@ -84,7 +84,16 @@ class Utils {
         for(var i = 0 ;i<num; i++){
             fn(i);
         }
+    }    
+    
+    
+    static forEach(arr,fn){
+        for(var i=0; i< arr.length; i++){
+            fn(arr[i],i);
+        }
     }
+    
+    
 
     static parseTime(time) {
         var diff = Math.floor((new Date().getTime() - (time * 1000)) / 1000);

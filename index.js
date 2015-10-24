@@ -41,3 +41,13 @@ cache.updateDocsEquals("subs","id",3,function(sub){
 subs = cache.getTableData("subs");
 var sub  = cache.getById("subs",3);
 console.log(sub[0].name == name);
+
+
+console.log('destroy');
+cache.destroy();
+try {
+	subs = cache.getTableData("subs");
+	console.log('false');
+} catch (error) {
+	console.log('true');
+}

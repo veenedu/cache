@@ -1,3 +1,6 @@
+///<reference path="../bower_components/veen.utils/ts/Utils.ts" />
+                    
+
 class Cache {
 	cache: Object;
 	
@@ -20,12 +23,12 @@ class Cache {
 	
 	//get row where id
 	getById(tableName,id){
-		// Utils.
+		var tableData = this.getTableData(tableName);
+		var key = this.getTableKey(tableName);
+		return Utils.filterArrayByVal(tableData,key,id);
 	}
 
-	getTableKey(tableName) {
-		return this.getTableReference[tableName]['key'];
-	}	
+	
 	
 	//update or insert Docs
 	insertDocs(tableName, docs) {
@@ -56,7 +59,10 @@ class Cache {
 	}
 	
 	//
-	
+	private getTableKey(tableName) {
+		return this.getTableReference[tableName]['key'];
+	}
+			
 	private getTableReference(tableName) {
 		return this.cache[tableName];
 	}

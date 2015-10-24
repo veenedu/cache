@@ -1,4 +1,4 @@
-///<reference path="utils.ts" />
+///<reference path="../bower_components/veen.utils/ts/Utils.ts" />
 var Cache = (function () {
     //array of objects with table name and key keys
     //eg [{name:"stories",key:"id"}]
@@ -16,10 +16,9 @@ var Cache = (function () {
     };
     //get row where id
     Cache.prototype.getById = function (tableName, id) {
-        // Utils.
-    };
-    Cache.prototype.getTableKey = function (tableName) {
-        return this.getTableReference[tableName]['key'];
+        var tableData = this.getTableData(tableName);
+        var key = this.getTableKey(tableName);
+        return Utils.filterArrayByVal(tableData, key, id);
     };
     //update or insert Docs
     Cache.prototype.insertDocs = function (tableName, docs) {
@@ -45,6 +44,9 @@ var Cache = (function () {
         this.getTableReference(tableName)['data'].length = 0;
     };
     //
+    Cache.prototype.getTableKey = function (tableName) {
+        return this.getTableReference[tableName]['key'];
+    };
     Cache.prototype.getTableReference = function (tableName) {
         return this.cache[tableName];
     };

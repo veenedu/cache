@@ -19,6 +19,9 @@
     "test",
     "tests",
     "index.html",
-    "index.js"
+    "index.js",
+    "readme.txt",
+    "gulpfile.js",
+    "package.json"
   ] 
 }

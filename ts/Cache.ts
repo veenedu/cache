@@ -18,7 +18,6 @@ class Cache {
 	}
     
    
-	
 	destroy(){
 		if(this.cache){
 			Utils.forEachKey(this.cache,function(key,val){

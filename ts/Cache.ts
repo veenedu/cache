@@ -17,9 +17,7 @@ class Cache {
 		this.cache = c;
 	}
     
-    foo(){
-        return "12345";
-    }
+   
 	
 	destroy(){
 		if(this.cache){

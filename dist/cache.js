@@ -12,9 +12,6 @@ var Cache = (function () {
         });
         this.cache = c;
     }
-    Cache.prototype.foo = function () {
-        return "12345";
-    };
     Cache.prototype.destroy = function () {
         if (this.cache) {
             Utils.forEachKey(this.cache, function (key, val) {

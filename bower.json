@@ -22,7 +22,6 @@
     "index.js",
     "readme.txt",
     "gulpfile.js",
-    "package.json",
-    "bower.json"
+    "package.json"
   ] 
 }

@@ -1,4 +1,4 @@
-see readme.txt of cache package to learn about 
+see readme.txt of utils package to learn about 
 file structure,
 bower,
 gulp,

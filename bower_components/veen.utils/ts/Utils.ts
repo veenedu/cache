@@ -13,9 +13,7 @@ class Utils {
         }
         return result;
     }
-    
-    
-
+   
     //this mathod check whether a value exists in array,
     //if property is passed then its assumed that array contains object
     static inArray(value, arr: Array<any>, prop?: string): boolean {

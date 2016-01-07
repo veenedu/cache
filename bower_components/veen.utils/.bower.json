@@ -20,13 +20,15 @@
     "test",
     "tests",
     "index.html",
-    "index.js"
+    "index.js",
+    "gulpfile.js",
+    "readme.txt"
   ],
-  "_release": "6441c16b94",
+  "_release": "6f13f7fdb8",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "6441c16b943184d4dc253809eebb849c101585ce"
+    "commit": "6f13f7fdb82770ce0e9638b30b86a7165d3ef2c1"
   },
   "_source": "git://github.com/veenedu/Utils.git",
   "_target": "*",
